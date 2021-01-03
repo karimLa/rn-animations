@@ -15,9 +15,8 @@ function Circle({ size, animatedValue, ...props }: Props) {
 	const { colors } = useTheme();
 
 	const containerBg = animatedValue.interpolate({
-		inputRange: [0, 0.001, 0.5, 0.501, 1],
+		inputRange: [0, 0.5, 0.501, 1],
 		outputRange: [
-			colors.textSuccess,
 			colors.textSuccess,
 			colors.textSuccess,
 			colors.textGrey,
@@ -26,9 +25,8 @@ function Circle({ size, animatedValue, ...props }: Props) {
 	});
 
 	const circleBg = animatedValue.interpolate({
-		inputRange: [0, 0.001, 0.5, 0.501, 1],
+		inputRange: [0, 0.5, 0.501, 1],
 		outputRange: [
-			colors.textGrey,
 			colors.textGrey,
 			colors.textGrey,
 			colors.textSuccess,

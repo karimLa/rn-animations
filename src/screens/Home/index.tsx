@@ -10,6 +10,7 @@ function HomeScreen({ navigation }: HomeScreenProps) {
 		{ name: 'Sentence', title: 'Fade Text' },
 		{ name: 'AnimatedCoursel', title: 'Animated Coursel' },
 		{ name: 'PerspectiveAnimation', title: 'Perspective Animation' },
+		{ name: 'AccordionMenu', title: 'Accordion Menu' },
 	];
 
 	return (
@@ -36,7 +37,7 @@ function HomeScreen({ navigation }: HomeScreenProps) {
 							justifyContent='center'
 							alignItems='center'
 						>
-							<Text color='textBlack' letterSpacing={1.2} fontSize={14}>
+							<Text color='textBlack' letterSpacing={1.2} fontSize={12}>
 								{item.title}
 							</Text>
 						</Box>

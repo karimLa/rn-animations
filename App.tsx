@@ -9,6 +9,7 @@ import HomeScreen from './src/screens/Home';
 import SentenceScreen from './src/screens/Sentence';
 import AnimatedCoursel from './src/screens/AnimatedCarousel';
 import PerspectiveAnimation from './src/screens/PerspectiveAnimation';
+import AccordionMenu from './src/screens/AccordionMenu';
 
 const Stack = createStackNavigator<RootStackParamList>();
 
@@ -31,6 +32,11 @@ export default function App() {
 					<Stack.Screen
 						name='PerspectiveAnimation'
 						component={PerspectiveAnimation}
+						options={{ headerShown: false }}
+					/>
+					<Stack.Screen
+						name='AccordionMenu'
+						component={AccordionMenu}
 						options={{ headerShown: false }}
 					/>
 				</Stack.Navigator>

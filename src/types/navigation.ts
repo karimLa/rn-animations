@@ -6,6 +6,7 @@ export type RootStackParamList = {
 	Sentence: undefined;
 	AnimatedCoursel: undefined;
 	PerspectiveAnimation: undefined;
+	AccordionMenu: undefined
 };
 
 type HomeScreenRouteProp = RouteProp<RootStackParamList, 'Home'>;
