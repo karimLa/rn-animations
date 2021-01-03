@@ -5,11 +5,14 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { ThemeProvider } from '@shopify/restyle';
 import { RootStackParamList } from './src/types/navigation';
 import theme from './src/constants/theme';
-import HomeScreen from './src/screens/Home';
-import SentenceScreen from './src/screens/Sentence';
-import AnimatedCoursel from './src/screens/AnimatedCarousel';
-import PerspectiveAnimation from './src/screens/PerspectiveAnimation';
-import AccordionMenu from './src/screens/AccordionMenu';
+import {
+	HomeScreen,
+	SentenceScreen,
+	AccordionMenu,
+	AnimatedCoursel,
+	FlatListCarousel,
+	PerspectiveAnimation,
+} from './src/screens';
 
 const Stack = createStackNavigator<RootStackParamList>();
 
@@ -37,6 +40,11 @@ export default function App() {
 					<Stack.Screen
 						name='AccordionMenu'
 						component={AccordionMenu}
+						options={{ headerShown: false }}
+					/>
+					<Stack.Screen
+						name='FlatListCarousel'
+						component={FlatListCarousel}
 						options={{ headerShown: false }}
 					/>
 				</Stack.Navigator>

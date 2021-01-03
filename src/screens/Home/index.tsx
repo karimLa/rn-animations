@@ -11,6 +11,7 @@ function HomeScreen({ navigation }: HomeScreenProps) {
 		{ name: 'AnimatedCoursel', title: 'Animated Coursel' },
 		{ name: 'PerspectiveAnimation', title: 'Perspective Animation' },
 		{ name: 'AccordionMenu', title: 'Accordion Menu' },
+		{ name: 'FlatListCarousel', title: 'FlatList Carousel' },
 	];
 
 	return (
