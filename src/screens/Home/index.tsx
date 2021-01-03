@@ -9,12 +9,13 @@ function HomeScreen({ navigation }: HomeScreenProps) {
 	const links = [
 		{ name: 'Sentence', title: 'Fade Text' },
 		{ name: 'AnimatedCoursel', title: 'Animated Coursel' },
+		{ name: 'PerspectiveAnimation', title: 'Perspective Animation' },
 	];
 
 	return (
 		<Box flex={1}>
 			<FlatList
-				numColumns={3}
+				numColumns={2}
 				data={links}
 				keyExtractor={(item) => item.name}
 				renderItem={({ item }) => (

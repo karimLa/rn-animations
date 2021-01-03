@@ -8,6 +8,7 @@ import theme from './src/constants/theme';
 import HomeScreen from './src/screens/Home';
 import SentenceScreen from './src/screens/Sentence';
 import AnimatedCoursel from './src/screens/AnimatedCarousel';
+import PerspectiveAnimation from './src/screens/PerspectiveAnimation';
 
 const Stack = createStackNavigator<RootStackParamList>();
 
@@ -26,6 +27,11 @@ export default function App() {
 						name='AnimatedCoursel'
 						component={AnimatedCoursel}
 						options={{ title: 'Animated Coursel' }}
+					/>
+					<Stack.Screen
+						name='PerspectiveAnimation'
+						component={PerspectiveAnimation}
+						options={{ headerShown: false }}
 					/>
 				</Stack.Navigator>
 			</NavigationContainer>
