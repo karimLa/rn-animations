@@ -11,6 +11,7 @@ const palette = {
 
   black: '#0B0B0B',
 	white: '#F0F2F3',
+	fullWhite: '#fff',
 
 	grayLight: '#ccc',
 	gray: '#adadad',
@@ -29,7 +30,7 @@ const theme = createTheme({
 		gradientEnd: palette.blueLight,
 		mainHeadline: palette.white,
 		textBlack: palette.black,
-		textWhite: palette.white,
+		textWhite: palette.fullWhite,
 		textGrey: palette.grayDark,
 		textError: palette.red,
 		textSuccess: palette.greenLight,

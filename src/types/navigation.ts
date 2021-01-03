@@ -3,7 +3,8 @@ import { StackNavigationProp } from '@react-navigation/stack';
 
 export type RootStackParamList = {
 	Home: undefined;
-  Sentence: undefined;
+	Sentence: undefined;
+	AnimatedCoursel: undefined;
 };
 
 type HomeScreenRouteProp = RouteProp<RootStackParamList, 'Home'>;

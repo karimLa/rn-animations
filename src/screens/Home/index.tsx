@@ -7,8 +7,8 @@ import { HomeScreenProps } from '../../types/navigation';
 
 function HomeScreen({ navigation }: HomeScreenProps) {
 	const links = [
-		{ name: 'Home', title: 'Home' },
-		{ name: 'Sentence', title: 'Sentence' },
+		{ name: 'Sentence', title: 'Fade Text' },
+		{ name: 'AnimatedCoursel', title: 'Animated Coursel' },
 	];
 
 	return (
@@ -29,11 +29,15 @@ function HomeScreen({ navigation }: HomeScreenProps) {
 							minHeight={100}
 							borderWidth={1}
 							borderRadius={15}
+							paddingHorizontal='sm'
+							bg='textWhite'
 							borderColor='gradientEnd'
 							justifyContent='center'
 							alignItems='center'
 						>
-							<Text>{item.title}</Text>
+							<Text color='textBlack' letterSpacing={1.2} fontSize={14}>
+								{item.title}
+							</Text>
 						</Box>
 					</ButtonOpacity>
 				)}

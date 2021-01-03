@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useCallback, useEffect, useRef } from 'react';
 import { Animated } from 'react-native';
 import { BoxProps } from '@shopify/restyle';
 import { Theme } from '../../constants/theme';
@@ -9,9 +9,18 @@ type Props = BoxProps<Theme> & {
 	content: string;
 	textStyle?: any;
 	color?: keyof Theme['colors'];
+	duration?: number;
+	onFinish?: () => void;
 };
 
-function TextAnimator({ content, textStyle, color, ...props }: Props) {
+function TextAnimator({
+	content,
+	duration,
+	onFinish,
+	textStyle,
+	color,
+	...props
+}: Props) {
 	const { colors } = useTheme();
 	const words = useRef(content.trim().split(' ')).current;
 	const animatedValues = useRef(
@@ -22,17 +31,32 @@ function TextAnimator({ content, textStyle, color, ...props }: Props) {
 		animate();
 	}, []);
 
-	const animate = (toValue = 1) => {
-		const animations = words.map((_, i) => {
-			return Animated.timing(animatedValues[i], {
-				toValue,
-				duration: 500,
-				useNativeDriver: true,
+	const animate = useCallback(
+		(toValue: number = 1) => {
+			const animations = words.map((_, i) => {
+				return Animated.timing(animatedValues[i], {
+					toValue,
+					duration,
+					useNativeDriver: true,
+				});
 			});
-		});
 
-		Animated.stagger(100, animations).start();
-	};
+			const values = toValue === 0 ? animations.reverse() : animations;
+
+			Animated.stagger(duration! / 5, values).start(() => {
+				// Fade Backward
+				// setTimeout(() => animate(toValue === 0 ? 1 : 0), 1000);
+
+				if (onFinish) {
+					if (typeof onFinish !== 'function') {
+						throw new Error('onFinish must be a function');
+					}
+					onFinish();
+				}
+			});
+		},
+		[animatedValues, duration, onFinish]
+	);
 
 	return (
 		<Box {...props} flexWrap='wrap' flexDirection='row'>
@@ -61,6 +85,7 @@ TextAnimator.defaultProps = {
 		lineHeight: 25,
 	},
 	color: 'textGrey',
+	duration: 500,
 };
 
 export default TextAnimator;
